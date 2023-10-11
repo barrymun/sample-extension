@@ -10,6 +10,7 @@
   "scripts": {
     "prepare": "husky install",
     "pre-commit": "lint-staged",
+    "client-dev": "yarn workspace client dev",
     "extension-build": "yarn workspace extension build"
   },
   "lint-staged": {
