@@ -1,4 +1,4 @@
-import { Message, MessageType } from "../utils";
+import { Message, MessageType } from "utils";
 
 chrome.action.onClicked.addListener((tab) => {
   if (!tab.id) return;
