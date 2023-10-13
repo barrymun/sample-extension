@@ -1,4 +1,4 @@
-import { panelClosedStyle, panelId, panelOpenStyle, panelWidth } from "utils";
+import { panelClosedStyle, panelFrameStyle, panelId, panelOpenStyle, panelWidth } from "utils";
 
 let isBound: boolean = false;
 let panel: HTMLDivElement | undefined;
@@ -15,6 +15,11 @@ const bindElementsToPage = () => {
   panel.setAttribute("id", panelId);
   panel.setAttribute("style", panelClosedStyle);
   document.body.appendChild(panel);
+
+  const iframe = document.createElement("iframe");
+  iframe.setAttribute("src", chrome.runtime.getURL("assets/panel.html"));
+  iframe.setAttribute("style", panelFrameStyle);
+  panel.appendChild(iframe);
 };
 
 const initialize = () => {

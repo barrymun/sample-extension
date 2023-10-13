@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "sample-extension",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "sample-extension",
   "action": {
     "default_title": "sample-extension"
@@ -22,5 +22,11 @@
     "32": "icons/icon32.png",
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
-  }
+  },
+  "web_accessible_resources": [
+    {
+      "matches": ["<all_urls>"],
+      "resources": ["assets/panel.html"]
+    }
+  ]
 }
