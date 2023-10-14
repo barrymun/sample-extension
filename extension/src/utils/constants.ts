@@ -3,9 +3,9 @@ export const panelWidth: string = "500px";
 export const panelId: string = "sapphire-panel";
 export const panelClosedStyle: string = `
   width: 0;
-  // opacity: 0;
-  // transform: translateX(100%);
-  // transition: opacity 0.3s, transform 0.3s;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 0.3s, transform 0.3s;
 `;
 export const panelOpenStyle: string = `
   position: fixed;
@@ -18,9 +18,9 @@ export const panelOpenStyle: string = `
   border-radius: 4px;
   z-index: 2147483647;
   background-color: #fff;
-  // opacity: 1;
-  // transform: translateX(0);
-  // transition: opacity 0.3s, transform 0.3s;
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.3s, transform 0.3s;
 `;
 
 export const panelFrameId: string = "sapphire-panel-frame";
