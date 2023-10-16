@@ -12,11 +12,6 @@ const bindElementsToPage = () => {
 
   // append the elements to the DOM
 
-  const linkElement = document.createElement("link");
-  linkElement.setAttribute("rel", "stylesheet");
-  linkElement.setAttribute("href", chrome.runtime.getURL("assets/css/index.css"));
-  document.head.appendChild(linkElement);
-
   const panel = document.createElement("div");
   panel.setAttribute("id", panelId);
   panel.setAttribute("style", panelClosedStyle);

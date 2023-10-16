@@ -1,6 +1,8 @@
 import { MessageType } from "utils";
 import { toggleVisibility, initialize } from "content/base";
 
+import "assets/css/index.css";
+
 (() => {
   initialize();
 })();
