@@ -1,0 +1,9 @@
+/* .panel-open {
+  
+} */
+
+@media (max-width: 768px) {
+  .panel-open {
+    max-width: 50px;
+  }
+}

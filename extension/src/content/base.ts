@@ -11,6 +11,12 @@ const bindElementsToPage = () => {
   isBound = true;
 
   // append the elements to the DOM
+
+  const linkElement = document.createElement("link");
+  linkElement.setAttribute("rel", "stylesheet");
+  linkElement.setAttribute("href", chrome.runtime.getURL("assets/css/index.css"));
+  document.head.appendChild(linkElement);
+
   const panel = document.createElement("div");
   panel.setAttribute("id", panelId);
   panel.setAttribute("style", panelClosedStyle);
@@ -39,8 +45,10 @@ const isPanelOpen = (): boolean => {
 const toggleVisibility = () => {
   if (isPanelOpen()) {
     getPanel().setAttribute("style", panelClosedStyle);
+    getPanel().classList.remove("panel-open");
   } else {
     getPanel().setAttribute("style", panelOpenStyle);
+    getPanel().classList.add("panel-open");
   }
 };
 
