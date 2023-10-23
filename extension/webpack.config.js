@@ -11,6 +11,7 @@ module.exports = (env, argv) => {
       content: './src/content/index.ts',
       popup: './src/popup/index.ts',
       utils: './src/utils/index.ts',
+      panelIframe: './src/panel-iframe/index.ts',
     },
     module: {
       rules: [
@@ -43,6 +44,7 @@ module.exports = (env, argv) => {
           { from: 'manifest.json', to: './' },
           { from: 'src/icons', to: 'icons' },
           { from: 'src/assets', to: 'assets' },
+          { from: 'src/templates', to: 'templates' },
         ],
       }),
     ],

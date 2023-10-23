@@ -1,4 +1,4 @@
-import { panelClosedStyle, panelFrameStyle, panelId, panelOpenStyle, panelWidth } from "utils";
+import { panelClosedStyle, panelFrameId, panelFrameStyle, panelId, panelOpenStyle, panelWidth } from "utils";
 
 let isBound: boolean = false;
 let panel: HTMLDivElement | undefined;
@@ -18,7 +18,8 @@ const bindElementsToPage = () => {
   document.body.appendChild(panel);
 
   const iframe = document.createElement("iframe");
-  iframe.setAttribute("src", chrome.runtime.getURL("assets/panel.html"));
+  iframe.setAttribute("id", panelFrameId);
+  iframe.setAttribute("src", chrome.runtime.getURL("templates/panel.html"));
   iframe.setAttribute("style", panelFrameStyle);
   panel.appendChild(iframe);
 };
@@ -47,4 +48,22 @@ const toggleVisibility = () => {
   }
 };
 
-export { initialize, toggleVisibility };
+const initializeUpdateListener = (handler: () => void) => {
+  let url = window.location.href;
+  handler();
+  const observer = new MutationObserver(() => {
+    const newUrl = window.location.href;
+    if (newUrl !== url) {
+      url = newUrl;
+      handler();
+    }
+  });
+  observer.observe(document.body, {
+    attributes: false,
+    characterData: false,
+    childList: true,
+    subtree: true,
+  });
+};
+
+export { initialize, toggleVisibility, initializeUpdateListener };
