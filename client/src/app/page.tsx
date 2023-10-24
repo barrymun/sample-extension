@@ -1,11 +1,12 @@
 "use client";
 
+import { Message, MessageType } from "common/dist/types";
 import { useEffect } from "react";
 
 // import styles from "./page.module.css";
 
 export default function Home() {
-  const onMessage = (event: MessageEvent) => {
+  const onMessage = (event: MessageEvent<MessageType>) => {
     console.log("message received", event.data);
   };
 
@@ -17,7 +18,7 @@ export default function Home() {
   }, []);
 
   const onLoad = () => {
-    const message = { type: "GET_PAGE_DATA" }; // TODO: make a "common" package to share types
+    const message: Message = { type: MessageType.GET_PAGE_DATA };
     window.parent.postMessage(message, "*");
   };
 
