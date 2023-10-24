@@ -1,9 +1,12 @@
+import { Message, MessageType } from "utils";
+
 const onLoad = () => {
   console.log("loaded");
-  window.parent.postMessage({ x: "x" }, "*");
+  const message: Message = { type: MessageType.GET_PAGE_DATA };
+  window.parent.postMessage(message, "*");
 };
 
-const onMessage = (event: MessageEvent) => {
+const onMessage = (event: MessageEvent<Message>) => {
   console.log(event.data);
 };
 

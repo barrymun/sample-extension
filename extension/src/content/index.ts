@@ -9,8 +9,14 @@ import "assets/css/index.css";
   initializeUpdateListener(sendPageData);
 })();
 
-window.addEventListener("message", (event: MessageEvent) => {
-  console.log(event.data);
+window.addEventListener("message", (event: MessageEvent<Message>) => {
+  switch (event.data.type) {
+    case MessageType.GET_PAGE_DATA:
+      sendPageData();
+      break;
+    default:
+      break;
+  }
 });
 
 chrome.runtime.onMessage.addListener(function (request: Message, sender, sendResponse) {
