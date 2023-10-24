@@ -5,18 +5,24 @@
   "license": "MIT",
   "workspaces":[
     "client",
+    "common",
     "extension"
   ],
   "scripts": {
     "prepare": "husky install",
     "pre-commit": "lint-staged",
     "client-dev": "yarn workspace client dev",
-    "extension-build": "yarn workspace extension build"
+    "extension-build": "yarn workspace extension build",
+    "common-build": "yarn workspace common build"
   },
   "lint-staged": {
     "client/src/**/*.{ts,tsx}": [
       "prettier --write 'client/src/**/*.{ts,tsx}'",
       "eslint --fix --config client/.eslintrc.json 'client/src/**/*.{ts,tsx}'"
+    ],
+    "common/src/**/*.ts": [
+      "prettier --write common/src/**/*.ts",
+      "eslint --fix --config common/.eslintrc.json common/src/**/*.ts"
     ],
     "extension/src/**/*.ts": [
       "prettier --write extension/src/**/*.ts",

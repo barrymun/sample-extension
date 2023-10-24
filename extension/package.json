@@ -9,6 +9,9 @@
     "package": "web-ext build",
     "prepare": "husky install"
   },
+  "dependencies": {
+    "common": "file:../common"
+  },
   "devDependencies": {
     "@types/chrome": "^0.0.237",
     "@types/lodash": "^4.14.198",

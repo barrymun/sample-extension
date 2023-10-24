@@ -1,4 +1,4 @@
-import { Message, MessageType } from "utils";
+import { Message, MessageType } from "common/dist/types";
 
 const onMessage = (event: MessageEvent<Message>) => {
   const iframe = document.getElementById("sapphire-panel-frame-remote") as HTMLIFrameElement;

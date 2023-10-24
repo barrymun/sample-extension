@@ -1,4 +1,4 @@
-import { Message, MessageType } from "utils";
+import { Message, MessageType } from "common/dist/types";
 
 const sendPageData = () => {
   const url = window.location.href;

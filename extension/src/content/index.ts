@@ -1,4 +1,5 @@
-import { Message, MessageType } from "utils";
+import { Message, MessageType } from "common/dist/types";
+
 import { toggleVisibility, initialize, initializeUpdateListener } from "content/base";
 import { sendPageData } from "content/message";
 
