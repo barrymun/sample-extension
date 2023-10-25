@@ -17,6 +17,5 @@ const onMessage = (event: MessageEvent<Message>) => {
 window.addEventListener("message", onMessage);
 
 window.addEventListener("unload", () => {
-  console.log("unloaded");
   window.removeEventListener("message", onMessage);
 });
