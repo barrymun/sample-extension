@@ -13,7 +13,10 @@
     "pre-commit": "lint-staged",
     "client-dev": "yarn workspace client dev",
     "extension-build": "yarn workspace extension build",
-    "common-build": "yarn workspace common build && yarn install"
+    "common-build": "yarn workspace common build && yarn install",
+    "docker-up": "docker-compose up -d --build",
+    "docker-down": "docker-compose down",
+    "docker-destroy": "docker-compose down -v"
   },
   "lint-staged": {
     "client/src/**/*.{ts,tsx}": [
