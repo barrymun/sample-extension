@@ -13,7 +13,7 @@
     "pre-commit": "lint-staged",
     "client-dev": "yarn workspace client dev",
     "extension-build": "yarn workspace extension build",
-    "common-build": "yarn workspace common build"
+    "common-build": "yarn workspace common build && yarn install"
   },
   "lint-staged": {
     "client/src/**/*.{ts,tsx}": [

@@ -7,5 +7,10 @@ export enum MessageType {
 
 export interface Message {
   type: MessageType;
-  data?: Record<string, unknown>;
+}
+
+export interface SendPageDataMessage extends Message {
+  data: {
+    url: string;
+  };
 }

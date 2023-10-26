@@ -1,9 +1,9 @@
-import { Message, MessageType } from "common/dist/types";
+import { MessageType, SendPageDataMessage } from "common/dist/types";
 
 const sendPageData = () => {
   const url = window.location.href;
   const iframe = document.getElementById("sapphire-panel-frame") as HTMLIFrameElement;
-  const message: Message = {
+  const message: SendPageDataMessage = {
     type: MessageType.SEND_PAGE_DATA,
     data: { url },
   };
