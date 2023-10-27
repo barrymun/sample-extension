@@ -12,6 +12,8 @@
     "prepare": "husky install",
     "pre-commit": "lint-staged",
     "client-dev": "yarn workspace client dev",
+    "client-build": "yarn workspace client build",
+    "extension-watch": "yarn workspace extension watch",
     "extension-build": "yarn workspace extension build",
     "common-build": "yarn workspace common build && yarn install",
     "docker-up": "docker-compose up -d --build",
